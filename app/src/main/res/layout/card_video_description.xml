@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/view_video_thumbnail"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_launcher_background"/>
+        <RelativeLayout
+            android:padding="3sp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/view_video_description_container"
+            android:layout_toRightOf="@+id/view_video_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/view_video_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title of Video"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/view_video_channel_name"
+                android:layout_below="@+id/view_video_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pwediepie"
+                android:textSize="@string/default_font_size"/>
+
+            <TextView
+                android:id="@+id/view_video_published_date"
+                android:layout_below="@+id/view_video_channel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="Published on Oct 25, 2018"
+                android:textSize="@string/default_font_size"/>
+
+            <TextView
+                android:id="@+id/view_video_views"
+                android:layout_below="@+id/view_video_published_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,235,234 views"
+                android:textSize="@string/default_font_size"/>
+
+            <TextView
+                android:id="@+id/view_video_description_text"
+                android:layout_below="@+id/view_video_views"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fake_description"
+                android:lines="3"
+                android:justificationMode="inter_word"
+                android:ellipsize="end"
+                android:textSize="@string/default_font_size"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

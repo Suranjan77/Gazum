@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
+
     <!-- Action Bar Start -->
     <RelativeLayout
         android:id="@+id/view_action_bar"
@@ -23,18 +24,19 @@
             android:src="@drawable/ic_more_vert" />
     </RelativeLayout>
     <!-- Action Bar End -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view_action_bar"
         android:background="@color/colorPrimary">
 
-        <!-- Weather View Start -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Weather View Start -->
             <LinearLayout
                 android:id="@+id/view_weather_container"
                 android:layout_width="match_parent"
@@ -96,12 +98,18 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="18sp" />
             </LinearLayout>
+            <!-- Weather View End -->
+
+            <!-- Video View Start -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/view_main_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite">
+
+            </android.support.v7.widget.RecyclerView>
+            <!-- Video View End -->
         </LinearLayout>
-        <!-- Weather View End -->
-
-        <!-- Video View Start -->
-
-        <!-- Video View End -->
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
@@ -112,7 +120,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:elevation="6dp"
         android:clickable="true"
+        android:elevation="6dp"
         android:src="@drawable/ic_search" />
 </RelativeLayout>
