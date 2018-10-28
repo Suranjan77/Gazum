@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="iconNamesArray">
+        <item>clear-day</item>
+        <item>clear-night</item>
+        <item>partly-cloudy-day</item>
+        <item>partly-cloudy-night</item>
+        <item>cloudy</item>
+        <item>rain</item>
+        <item>sleet</item>
+        <item>snow</item>
+        <item>wind</item>
+        <item>fog</item>
+    </string-array>
+
+</resources>

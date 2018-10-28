@@ -31,10 +31,16 @@
         android:layout_below="@+id/view_action_bar"
         android:background="@color/colorPrimary">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/weatherProgress"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"/>
 
             <!-- Weather View Start -->
             <LinearLayout
@@ -49,7 +55,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     app:weatherIconColor="@color/colorWhite"
-                    app:weatherIconResource="@string/wi_day_sunny"
                     app:weatherIconSize="70" />
 
                 <TextView
@@ -58,7 +63,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="cursive"
-                    android:text="Kathmandu, Nepal"
                     android:textColor="@color/colorWhite"
                     android:textSize="20sp" />
 
@@ -73,15 +77,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="cursive"
-                        android:text="18"
                         android:textColor="@color/colorWhite"
                         android:textSize="90sp" />
 
                     <TextView
+                        android:id="@+id/degree_celcius"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/view_temperature"
-                        android:text="o"
                         android:textColor="@color/colorWhite"
                         android:textSize="25sp" />
                 </RelativeLayout>
@@ -94,7 +97,6 @@
                     android:fontFamily="cursive"
                     android:gravity="center"
                     android:paddingBottom="10sp"
-                    android:text="Its rainy today! Let's watch some movies"
                     android:textColor="@color/colorWhite"
                     android:textSize="18sp" />
             </LinearLayout>
@@ -102,6 +104,7 @@
 
             <!-- Video View Start -->
             <android.support.v7.widget.RecyclerView
+                android:layout_below="@+id/view_weather_container"
                 android:id="@+id/view_main_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -109,7 +112,7 @@
 
             </android.support.v7.widget.RecyclerView>
             <!-- Video View End -->
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
