@@ -15,3 +15,6 @@ It is an Youtube client, but with some unusual features as listed below:
 <h3>Contact me</h3>
 <a href="mailto:7suranjanpoudel7@gmail.com">Mail me</a><br>
 <a href="https://www.facebook.com/suranjan.poudel.7">Facebook</a>
+<br>
+<p>Note* ==> WeatherUtil.KEY is the api key for darksky weather api, Use your own api key
+             YoutubeApiKey.KEY is the api key for youtube api, Use your own api key</p>
