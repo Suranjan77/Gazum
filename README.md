@@ -5,6 +5,9 @@ It is an Youtube client, but with some unusual features as listed below:
   <li>Displays your current weather</li>
   <li>Suggests you videos depending upon weather</li>
 </ul>
+<h3>Screenshots</h3>
+
+![Image Screenshot](/screenshots/Screenshot_2018-10-28.png)
 
 <br>
 <h3>What to expect in next version</h3>
