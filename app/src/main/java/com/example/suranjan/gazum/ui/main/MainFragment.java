@@ -91,6 +91,7 @@ public class MainFragment extends Fragment {
         iconView = getView().findViewById(R.id.view_weather_icon);
         degreeCelcius = getView().findViewById(R.id.degree_celcius);
         progressBar = getView().findViewById(R.id.weatherProgress);
+
         mViewModel.getWeatherData().observe(this, new Observer<WeatherData>() {
             @Override
             public void onChanged(@Nullable WeatherData weatherData) {
