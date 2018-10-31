@@ -7,7 +7,7 @@ It is an Youtube client, but with some unusual features as listed below:
 </ul>
 <h3>Screenshots</h3>
 
-![Image Screenshot](/screenshots/Screenshot_2018-10-28.png)
+![Image Screenshot 1](/screenshots/Screenshot1.png) <hr> ![Image Screenshot 2](/screenshots/Screenshot2.png)
 
 <br>
 <h3>What to expect in next version</h3>
