@@ -16,7 +16,8 @@
         android:padding="10dp">
 
         <ImageView
-            android:id="@+id/view_location_search"
+            android:clickable="true"
+            android:id="@+id/view_weather_menu"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_alignParentEnd="true"

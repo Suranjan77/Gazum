@@ -1,41 +1,46 @@
 package com.example.suranjan.gazum.ui.search;
 
-import android.app.ListActivity;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.TextView;
 
 import com.example.suranjan.gazum.R;
+import com.example.suranjan.gazum.ui.main.VideoListFragment;
+import com.example.suranjan.gazum.ui.player.YoutubePlayerActivity;
 
-public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, VideoListFragment.OnFragmentInteractionListener {
 
-    TextView testText;
-    SearchView searchView;
+    private SearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         searchView = findViewById(R.id.view_search);
         searchView.setIconifiedByDefault(false);
-
-        testText = findViewById(R.id.test_text);
-
         searchView.setOnQueryTextListener(this);
+        searchView.requestFocus();
     }
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        testText.setText(searchView.getQuery().toString());
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.replacable_container_below_search, VideoListFragment.newInstance(query))
+                .commit();
+        searchView.clearFocus();
         return true;
     }
 
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
+    }
+
+    @Override
+    public void playVideo(String videoId) {
+        Intent intent = new Intent(this, YoutubePlayerActivity.class);
+        intent.putExtra("searchQuery", videoId);
+        startActivity(intent);
     }
 }

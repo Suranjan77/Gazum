@@ -12,11 +12,16 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.example.suranjan.gazum.ui.main.MainFragment;
 import com.example.suranjan.gazum.ui.main.VideoListFragment;
-import com.example.suranjan.gazum.ui.player.YoutubePlayerFragment;
+import com.example.suranjan.gazum.ui.player.YoutubePlayerActivity;
 import com.example.suranjan.gazum.ui.search.SearchActivity;
 
 public class MainActivity extends AppCompatActivity implements VideoListFragment.OnFragmentInteractionListener {
@@ -59,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements VideoListFragment
                 )
                 .replace(
                         R.id.video_list_container,
-                        VideoListFragment.newInstance("English Songs")
+                        VideoListFragment.newInstance("")
                 ).commit();
     }
 
@@ -99,11 +104,8 @@ public class MainActivity extends AppCompatActivity implements VideoListFragment
 
     @Override
     public void playVideo(String videoId) {
-        getSupportFragmentManager().beginTransaction()
-                .replace(
-                        R.id.main_container,
-                        YoutubePlayerFragment.newInstance(videoId)
-                )
-                .commit();
+        Intent intent = new Intent(this, YoutubePlayerActivity.class);
+        intent.putExtra("searchQuery", videoId);
+        startActivity(intent);
     }
 }

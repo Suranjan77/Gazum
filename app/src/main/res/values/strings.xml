@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Gazum</string>
-    <string name="default_font_size">15sp</string>
     <string name="fake_description">Hello this is my first video of this series. I will be teaching you nothing. Enjoy!</string>
 
     <!-- TODO: Remove or change this placeholder text -->

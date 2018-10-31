@@ -9,7 +9,10 @@ import com.example.suranjan.gazum.utilities.WeatherUtil;
 import com.example.suranjan.gazum.utilities.YoutubeApiKey;
 import com.example.suranjan.gazum.weather.retrofitPart.APIRequest;
 import com.example.suranjan.gazum.weather.retrofitPart.model.WeatherData;
+import com.example.suranjan.gazum.youtube.retrofitPart.model.Item;
 import com.example.suranjan.gazum.youtube.retrofitPart.model.YoutubeSearchData;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,7 +32,7 @@ public class MainViewModel extends ViewModel {
 
     //It is fetched asyncronously using retrofit
     private MutableLiveData<WeatherData> weatherData;
-    private MutableLiveData<YoutubeSearchData> youtubeSearchData;
+    private MutableLiveData<List<Item>> searchItem;
 
     public void setLatitudeLongitude(String latitude, String longitude) {
         this.latitude = latitude;
@@ -49,12 +52,12 @@ public class MainViewModel extends ViewModel {
         this.maxResults = maxResults;
     }
 
-    public LiveData<YoutubeSearchData> getYoutubeSearchData() {
-        if (youtubeSearchData == null) {
-            youtubeSearchData = new MutableLiveData<>();
+    public LiveData<List<Item>> getYoutubeSearchData() {
+        if (searchItem == null) {
+            searchItem = new MutableLiveData<>();
             loadYoutubeSearchData();
         }
-        return youtubeSearchData;
+        return searchItem;
     }
 
     //Load data asynchronously using retrofit
@@ -79,12 +82,11 @@ public class MainViewModel extends ViewModel {
         call.enqueue(new Callback<YoutubeSearchData>() {
             @Override
             public void onResponse(Call<YoutubeSearchData> call, Response<YoutubeSearchData> response) {
-                youtubeSearchData.setValue(response.body());
+                searchItem.setValue(response.body().getItems());
             }
 
             @Override
             public void onFailure(Call<YoutubeSearchData> call, Throwable t) {
-                Log.e(TAG, "onFailure: Cannot fetch youtube data");
             }
         });
     }

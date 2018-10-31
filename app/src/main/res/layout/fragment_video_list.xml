@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="400dp"
-    android:background="@color/colorAccent"
     tools:context=".ui.main.VideoListFragment">
 
     <!-- Video View Start -->
@@ -16,5 +15,11 @@
 
     </android.support.v7.widget.RecyclerView>
     <!-- Video View End -->
+
+    <ProgressBar
+        android:id="@+id/videos_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
 
 </FrameLayout>

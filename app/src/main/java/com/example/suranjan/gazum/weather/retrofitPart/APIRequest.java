@@ -18,7 +18,7 @@ public interface APIRequest {
             @Query("units") String units
     );
 
-    @GET()
+    @GET("search")
     Call<YoutubeSearchData> getYoutubeSearchResults(
             @Query("part") String part,
             @Query("maxResults") String maxResults,
