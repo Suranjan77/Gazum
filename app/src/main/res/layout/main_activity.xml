@@ -12,11 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- todo: keep this linearlayout between topbar and bottom bar -->
+        <!-- TODO: this from here to-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!--todo ignore one framelayout cuz u have only one frame -->
             <FrameLayout
                 android:id="@+id/weather_container"
                 android:layout_width="match_parent"
@@ -28,6 +31,7 @@
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
+        <!-- TODO: here -->
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton

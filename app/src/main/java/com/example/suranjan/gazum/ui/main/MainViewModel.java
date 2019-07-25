@@ -82,11 +82,13 @@ public class MainViewModel extends ViewModel {
         call.enqueue(new Callback<YoutubeSearchData>() {
             @Override
             public void onResponse(Call<YoutubeSearchData> call, Response<YoutubeSearchData> response) {
-                searchItem.setValue(response.body().getItems());
+                Log.i("YoutubeData", response.body().toString());
+                //searchItem.setValue(response.body().getItems());
             }
 
             @Override
             public void onFailure(Call<YoutubeSearchData> call, Throwable t) {
+                Log.i("YoutubeData", "failed");
             }
         });
     }

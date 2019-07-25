@@ -57,15 +57,18 @@ public class MainActivity extends AppCompatActivity implements VideoListFragment
             latitude = location.getLatitude();
         }
 
+        //todo : Do this from here to
         getSupportFragmentManager().beginTransaction()
                 .replace(
                         R.id.weather_container,
                         MainFragment.newInstance(String.valueOf(longitude), String.valueOf(latitude))
                 )
+                //todo: only on replace is required since you have only one fragment
                 .replace(
                         R.id.video_list_container,
                         VideoListFragment.newInstance("")
                 ).commit();
+        //todo: here
     }
 
     private void checkLocationPermission() {
