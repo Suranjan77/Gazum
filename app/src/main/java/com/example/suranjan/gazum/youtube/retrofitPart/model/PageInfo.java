@@ -3,6 +3,15 @@ package com.example.suranjan.gazum.youtube.retrofitPart.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
+@AllArgsConstructor
 public class PageInfo {
 
     @SerializedName("totalResults")
@@ -11,46 +20,4 @@ public class PageInfo {
     @SerializedName("resultsPerPage")
     @Expose
     private Integer resultsPerPage;
-
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public PageInfo() {
-    }
-
-    /**
-     *
-     * @param totalResults
-     * @param resultsPerPage
-     */
-    public PageInfo(Integer totalResults, Integer resultsPerPage) {
-        super();
-        this.totalResults = totalResults;
-        this.resultsPerPage = resultsPerPage;
-    }
-
-    public Integer getTotalResults() {
-        return totalResults;
-    }
-
-    public void setTotalResults(Integer totalResults) {
-        this.totalResults = totalResults;
-    }
-
-    public Integer getResultsPerPage() {
-        return resultsPerPage;
-    }
-
-    public void setResultsPerPage(Integer resultsPerPage) {
-        this.resultsPerPage = resultsPerPage;
-    }
-
-    @Override
-    public String toString() {
-        return "PageInfo{" +
-                "totalResults=" + totalResults +
-                ", resultsPerPage=" + resultsPerPage +
-                '}';
-    }
 }
